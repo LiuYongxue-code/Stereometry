@@ -1,0 +1,17 @@
+\documentclass[border=0.2pt]{standalone}
+\usepackage{tikz,times}
+\usepackage{pgfplots}
+\usepackage{tikz-3dplot}
+\usetikzlibrary{patterns}
+\usetikzlibrary{3d,calc}
+\usetikzlibrary{arrows.meta}
+\begin{document}
+\tdplotsetmaincoords{85}{95}
+\begin{tikzpicture}[scale=3,line width=0.5pt,tdplot_main_coords]
+\draw[rounded corners=0.05pt](0,0,1)circle (0.2pt)node[right=4pt,above]{$A$}--(0,1,0)circle (0.15pt)node[right=4pt,below]{$D$}--
+(2,0.4,0)[fill=black]circle (0.25pt)node[below]{$C$}--(0,-1,0)circle (0.2pt)node[left=4pt,below]{$B$}--(0,0,1)--cycle;
+\draw[thin,dash pattern=on 2pt off 2pt](0,-1,0)--(0,0.333,0.666)circle (0.2pt)node[right=4pt,above]{$E$}(0,-1,0)--(0,1,0)(0,0,0)circle (0.2pt)node[left=4pt,below]{$O$}--(2,0.4,0)(0,0,1)--(0,0,0);
+\draw(0,0.333,0.666)[draw=black]--(2,0.4,0)(2,0.4,0)--(0,0,1);
+\end{tikzpicture}
+
+\end{document} 

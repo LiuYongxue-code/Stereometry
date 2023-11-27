@@ -1,0 +1,168 @@
+\documentclass[
+extrafontsizes,
+ twoside,
+ 11pt,
+ openright,
+ final,
+ %draft
+ ]{memoir}
+\usepackage{livroaberto}
+\usepackage{xcolor}
+\usepackage{ctex}
+\usepackage{tasks}
+\usepackage{pgfplots}
+\usetikzlibrary{
+calc,
+patterns,
+intersections,
+through,
+angles,
+backgrounds,
+positioning
+}
+\usepgfplotslibrary{patchplots}
+\usepackage{yhmath}
+\usepackage[mathscr]{eucal}
+\usetikzlibrary{math}
+\usepackage{tkz-euclide}
+
+\renewcommand{\lstlistlistingname}{Codeverzeichnis}
+\renewcommand{\lstlistingname}{Quellcode}
+% \lstset{caption=\lstname}
+% Globale Einstellungen
+\lstdefinestyle{latex}{
+language=[AlLaTeX]TeX,
+extendedchars=true,
+frame=single,
+keepspaces=true,
+backgroundcolor=\color{shang1!8!white},
+rulecolor=\color{white},
+breaklines=true,
+xleftmargin=\parindent,
+basicstyle=\footnotesize\ttfamily,
+basicstyle=\scriptsize\ttfamily\color{shang},
+keywordstyle=\bfseries\color{blue},
+commentstyle=\itshape\color{gray},
+identifierstyle=\bfseries\color{shang},
+stringstyle=\color{orange},
+}
+%=================================
+\usepackage{accsupp}
+\newcommand{\noncopynumber}[1]{ \BeginAccSupp{method=escape,ActualText={}}
+#1
+\EndAccSupp{}}
+
+\lstset {numberstyle=\tiny\color{gray!90!black}\noncopynumber,
+numbers=none,
+%numbersep=2pt,
+columns=flexible,
+title=\bfseries
+}
+
+
+\definecolor{Green}{RGB}{0,165,157}
+\definecolor{myback}{RGB}{53,64,89}
+\definecolor{mycolor}{RGB}{51,51,51}
+\definecolor{Orange}{RGB}{102,51,0}
+\definecolor{Green}{RGB}{0,102,51}
+\definecolor{Blue}{RGB}{15,107,108}
+\definecolor{Yellow}{RGB}{153,151,51}
+\definecolor{CUDRed}{RGB}{255,75,0}
+\definecolor{CUDGreen}{RGB}{3,175,122}
+\definecolor{CUDBlue}{RGB}{0,90,255}
+\definecolor{CUDCyan}{RGB}{77,196,255}
+\definecolor{CUDMagenta}{RGB}{153,0,153}
+\definecolor{CUDYellow}{RGB}{255,241,0}
+\definecolor{CUDBrown}{RGB}{128,64,0}
+\definecolor{CUDOrange}{RGB}{246,170,0}
+\definecolor{CUDPink}{RGB}{255,202,191}
+\definecolor{CUDBrightGreen}{RGB}{119,217,168}
+\definecolor{CUDLime}{RGB}{216,242,85}
+\definecolor{CUDCream}{RGB}{255,255,128}
+\definecolor{CUDBrightCyan}{RGB}{191,228,255}
+
+
+\def\myparallel{
+\setbox0\hbox{$=$}\makebox[\the\wd0][c]{\hss\(\slash\kern-0.2em\slash\)\hss}
+}
+
+\def\maruwaku#1{\begin{tikzpicture}[scale=0.7, baseline={([yshift=-22pt] current bounding box.north)}]
+\filldraw[color=CUDBlue, line width=1pt, rounded corners=2pt] (-0.1,0)--(2.1,0)--(2.1,1.1)--(-0.1,1.1)--cycle;
+\draw(1,0.5) node[whi te]{#1};
+\end{tikzpicture}
+}
+
+\DeclareMathOperator{\ee}{\!\!\;\mathrm e}
+\newcommand{\MR}{\mathbb R}
+\newcommand{\MC}{\mathbb C}
+\newcommand{\MF}{\mathbb F}
+\newcommand{\MZ}{\mathbb Z}
+\newcommand{\MN}{\mathbb N}
+\newcommand{\MCF}{\mathscr F}
+\newcommand{\ii}{\mathrm i}
+
+\usepackage{shapepar}
+
+\begin{document}
+
+\ifnum \aluno=1
+\renewcommand\chapterillustration{chapter-1}
+\else
+\renewcommand\chapterillustration{abertura-funcoes-professor}
+\fi
+\renewcommand\chapterwhat{由于各种原因，上期上传的TikZ绘图资源：\href{https://www.latexstudio.net/index/details/index/mid/2025.html}{高中数学TikZ 绘图合集}后有两部分内容没有完成，现在将空间几何部分的内容上传于此文档，内容编辑和搜集全程本人来做，若有问题请反馈至我的邮箱：yonguel487@qq.com.}
+\renewcommand\chapterbecause{本部分内容主要是空间立体几何的图形绘制，高中数学教师下载学习颇有价值，这里强烈推荐。绘制的图形来自于2019--2021年全国高考真题卷的空间集合试题，考虑到严肃性和规范性，绘制过程中几乎没有采用彩色绘制、填充等。笔记来自于之前的模板：\href{https://www.latexstudio.net/index/details/index/mid/1083.html}{TikZ 数表数据科研绘图}。}
+\chapter{{\boxtitlefont TikZ} 空间立体几何}
+\label{chap-1}
+
+\mbox{}\thispagestyle{empty}
+
+\thispagestyle{empty}
+\def\funcoeschap{}
+
+\mainmatter
+
+\explore{高中立体几何图形的TikZ实现}
+
+\indent 由于各种原因，上期上传的TikZ绘图资源：\href{https://www.latexstudio.net/index/details/index/mid/2025.html}{高中数学TikZ 绘图合集}后有两部分内容没有完成，现在将空间几何部分的内容上传于此文档，内容编辑和搜集全程本人来做，若有问题请反馈至我的邮箱：yonguel487@qq.com.
+
+\indent 本部分内容主要是空间立体几何的图形绘制，高中数学教师下载学习颇有价值，这里强烈推荐。绘制的图形来自于2019--2021年全国高考真题卷的空间集合试题，考虑到严肃性和规范性，绘制过程中几乎没有采用彩色绘制、填充等。笔记来自于之前的模板：\href{https://www.latexstudio.net/index/details/index/mid/1083.html}{TikZ 数表数据科研绘图}。
+
+\lstinputlisting[style=latex, firstline=10,lastline=23]{2019-Ia-18.tex}
+
+\begin{minipage}{0.4\linewidth}
+  %\begin{research}
+  \includegraphics{2019-beijing-16}
+  %\end{research}
+\end{minipage}\hfill
+\begin{minipage}{0.56\linewidth}
+  %\begin{knowledge}
+  \lstinputlisting[style=latex, firstline=10,lastline=23]{2019-Ia-18.tex}
+  %\end{knowledge}
+\end{minipage}\hfill
+
+\includegraphics{2019-beijing-16}
+
+\includegraphics{2019-beijingw-18}
+
+\includegraphics{2019-Ia-12}
+
+\includegraphics{2019-Ia-18}
+
+\includegraphics{2019-Ia-18da}
+
+\includegraphics{2019-Ib-16}
+
+\includegraphics{2019-Ib-18}
+
+\includegraphics{2019-Ib-18da}
+
+
+
+
+\input{chapters/chap1.tex}
+
+
+
+
+\end{document}

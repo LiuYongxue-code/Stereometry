@@ -1,0 +1,30 @@
+\documentclass[border=0.2pt]{standalone}
+\usepackage{tikz,times,amsmath}
+\usepackage{pgfplots}
+\usepackage{tikz-3dplot}
+\usetiklkzlibrary{patterns}
+\usetikzlibrary{3d,calc}
+\usetikzlibrary{arrows.meta}
+\begin{document}
+\tdplotsetmaincoords{70}{110}
+\begin{tikzpicture}[yscale=2,xscale=2,line width=0.8pt,tdplot_main_coords]
+%% ===========================================
+\coordinate (A) at (0,0,0);
+\coordinate (B) at (2,0,0);
+\coordinate (C) at (2,2,0);
+\coordinate (D) at (0,2,0);
+\coordinate (A1) at (0,0,2.5);
+\coordinate (B1) at (2,0,2.5);
+\coordinate (C1) at (2,2,2.5);
+\coordinate (D1) at (0,2,2.5);
+\coordinate (M) at (2,0,1);
+%% ===========================================
+\draw[rounded corners=0.05pt](D1)circle (0.25pt)node[right]{$D_1$}--(A1)circle (0.25pt)node[above]{$A_1$}--(B1)circle (0.25pt)node[left=2pt]{$B_1$}--
+(C1)circle (0.25pt)node[above=2pt]{$C_1$}--(D1)--(D)circle (0.25pt)node[right=2pt]{$D$}(C)circle (0.25pt)node[below=2pt]{$C$}--
+(B)circle (0.25pt)node[below=2pt]{$B$}--(M)circle (0.25pt)node[left=2pt]{$M$}
+(B1)--(C1)--(C)--(M)--(B1)(C)--(D)(A)circle (0.25pt)node[left=4pt,above]{$A$};
+%% ===========================================
+\draw[thin,dash pattern=on 3pt off 2pt](A1)--(A)
+(B)--(A)--(D)(A)--(A1)--(M)--(A1)--(C);
+\end{tikzpicture}
+\end{document} 

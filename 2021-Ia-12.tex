@@ -1,0 +1,41 @@
+\documentclass[border=0.2pt]{standalone}
+\usepackage{tikz,times,amsmath}
+\usepackage{pgfplots}
+\usepackage{tikz-3dplot}
+\usetikzlibrary{patterns}
+\usetikzlibrary{3d,calc}
+\usetikzlibrary{arrows.meta}
+\begin{document}
+\tdplotsetmaincoords{75}{225}
+\begin{tikzpicture}[line width=0.65pt,tdplot_main_coords]
+\draw[thin,->,dashed,-{Stealth[length=1.5mm]}](0,0,0)--(2.5,0,0)node[left]{$x$};
+\draw[thin,->,-{Stealth[length=1.5mm]}](0,0,0)--(0,2,0)node[below]{$y$};
+\draw[thin,->,-{Stealth[length=1.5mm]}](0,0,0)--(0,0,5)node[left]{$z$};
+%% ===========================================
+\coordinate (Q) at (0,0,0);
+\coordinate (A) at (1.732,0,0);
+\coordinate (A1) at (1.732,0,4);
+\coordinate (B) at (0,1,0);
+\coordinate (B1) at (0,1,4);
+\coordinate (C) at (0,-1,0);
+\coordinate (C1) at (0,-1,4);
+\coordinate (H) at (0,0,4);
+\coordinate (M) at (0,1,2);
+\coordinate (N) at (0,-1,2);
+%% ===========================================
+\draw[rounded corners=0.05pt](A)circle (0.25pt)node[below=-2pt]{$A$}--
+(A1)circle (0.25pt)node[left=-2pt]{$A_1$}--
+(B1)circle (0.25pt)node[left=-2pt]{$B_1$}--
+(B)circle (0.25pt)node[right=-2pt]{$B$}--
+(C)circle (0.25pt)node[right=-2pt]{$C$}--(C1)circle (0.25pt)node[right=-2pt]{$C_1$}--(B1)(A1)--(C1)--(B1)--(A1)--cycle
+(C)--(B)
+(A)--(B)
+(M)circle (0.25pt)node[left=-2pt]{$M$}--(N)circle (0.25pt)node[right=-2pt]{$N$}
+(H)circle (0.25pt)node[left=-2pt]{$H$};
+(Q)circle (0.25pt)node[below]{$Q$};
+%% ===========================================
+\draw[dashed](A)--(C)
+(A)--(Q)
+;
+\end{tikzpicture}
+\end{document} 

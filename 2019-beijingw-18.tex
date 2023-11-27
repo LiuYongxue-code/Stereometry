@@ -1,0 +1,42 @@
+\documentclass{standalone}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{tikz-3dplot}
+\usetikzlibrary{patterns}
+\usetikzlibrary{3d,calc}
+\usetikzlibrary{arrows.meta}
+\begin{document}
+\tdplotsetmaincoords{70}{110}
+
+\begin{tikzpicture}[scale=1.5,line width=0.5pt,tdplot_main_coords]
+
+\coordinate (A) at (0,0,0);
+\coordinate (B) at (4,0,0);
+\coordinate (C) at (4,2,0);
+\coordinate (D) at (0,2,0);
+\coordinate (P) at (0,0,2);
+\coordinate (E) at (2,2,0);
+
+
+%A-D-C
+\draw[rounded corners=0.05pt]
+(B)circle (0.25pt)node[left=1pt]{$B$}--
+(C)circle (0.25pt)node[below=1pt]{$C$}--
+(E)circle (0.25pt)node[right=1pt]{$E$}--
+(D)circle (0.25pt)node[right=1pt]{$D$}--
+(P)circle (0.25pt)node[above=1pt]{$P$}--(B)--cycle
+(P)--(C)(P)--(E)
+(A)circle (0.25pt)node[below=1pt]{$A$}
+;
+%% =================================
+\draw[thin,dash pattern=on 2pt off 2pt]
+(A)--(B)
+(A)--(C)
+(A)--(P)
+(A)--(E)
+(B)--(D)
+(A)--(D);
+\end{tikzpicture}
+
+
+\end{document} 

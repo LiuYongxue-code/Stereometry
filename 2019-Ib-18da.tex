@@ -1,0 +1,96 @@
+\documentclass[border=0.2pt]{standalone}
+\usepackage{tikz,times,amsmath}
+\usepackage{pgfplots}
+\usepackage{tikz-3dplot}
+\usetikzlibrary{patterns}
+\usetikzlibrary{3d,calc}
+\usetikzlibrary{arrows.meta}
+\begin{document}
+\tdplotsetmaincoords{70}{110}
+\begin{tikzpicture}[yscale=2,xscale=2,line width=0.5pt,tdplot_main_coords]
+%% ===========================================
+\coordinate (A) at (2,0,0);
+\coordinate (B) at (2,1,0);
+\coordinate (C) at (0,1,0);
+\coordinate (D) at (0,0,0);
+\coordinate (A1) at (2,0,2);
+\coordinate (B1) at (2,1,2);
+\coordinate (C1) at (0,1,2);
+\coordinate (D1) at (0,0,2);
+\coordinate (E) at (1,1,0);
+\coordinate (M) at (2,1,1);
+\coordinate (N) at (1,0,1);
+
+
+%% ===========================================
+\draw[rounded corners=0.05pt](A1)circle (0.25pt)node[left=-2pt]{$A_1$}--
+(B1)circle (0.25pt)node[right=-2pt]{$B_1$}--
+(C1)circle (0.25pt)node[above=1pt]{$C_1$}--
+(D1)circle (0.25pt)node[above=1pt]{$D_1$}--(A1)--cycle
+(A)circle (0.25pt)node[below=-2pt]{$A$}--
+(B)circle (0.25pt)node[below=-2pt]{$B$}--
+(C)circle (0.25pt)node[right=-2pt]{$C$}
+(A1)--(A)
+(B1)--(B)
+(C1)--(C)
+(C1)--(E)circle (0.25pt)node[right=-2pt]{$E$}
+(A1)--(M)circle (0.25pt)node[right=-2pt]{$M$}
+;
+%% ===========================================
+\draw[thin,dash pattern=on 2pt off 2pt](A1)--(A)
+(D1)--(D)
+(C1)--(D)circle (0.25pt)node[left=-2pt]{$D$}
+(D)--(C)
+(A)--(D)
+(M)--(N)
+(A1)--(D)
+(M)--(N)
+(D)--(E);
+\end{tikzpicture}
+\begin{tikzpicture}[yscale=2,xscale=2,line width=0.5pt,tdplot_main_coords]
+%% ===========================================
+\coordinate (A) at (2,0,0);
+\coordinate (B) at (2,1,0);
+\coordinate (C) at (0,1,0);
+\coordinate (D) at (0,0,0);
+\coordinate (A1) at (2,0,2);
+\coordinate (B1) at (2,1,2);
+\coordinate (C1) at (0,1,2);
+\coordinate (D1) at (0,0,2);
+\coordinate (E) at (1,1,0);
+\coordinate (M) at (2,1,1);
+\coordinate (N) at (1,0,1);
+
+\fill[blue!40!white,opacity=0.6](M)--(N)--(D)--(E)--cycle;
+\fill[pink!40!white,opacity=0.6](D)--(C1)--(E)--cycle;
+
+%% ===========================================
+\draw[rounded corners=0.05pt](A1)circle (0.25pt)node[left=-2pt]{$A_1$}--
+(B1)circle (0.25pt)node[right=-2pt]{$B_1$}--
+(C1)circle (0.25pt)node[above=1pt]{$C_1$}--
+(D1)circle (0.25pt)node[above=1pt]{$D_1$}--(A1)--cycle
+(A)circle (0.25pt)node[below=-2pt]{$A$}--
+(B)circle (0.25pt)node[below=-2pt]{$B$}--
+(C)circle (0.25pt)node[right=-2pt]{$C$}
+(A1)--(A)
+(B1)--(B)
+(C1)--(C)
+(E)--(M)
+(C1)--(E)circle (0.25pt)node[right=-2pt]{$E$}
+(A1)--(M)circle (0.25pt)node[right=-2pt]{$M$}
+(N)circle (0.25pt)node[left=-2pt]{$N$}
+;
+%% ===========================================
+\draw[thin,dash pattern=on 2pt off 2pt](A1)--(A)
+(D1)--(D)
+(C1)--(D)circle (0.25pt)node[left=-2pt]{$D$}
+(D)--(C)
+(A)--(D)
+(M)--(N)
+(A1)--(D)
+(M)--(N)
+(D)--(E);
+\end{tikzpicture}
+
+
+\end{document} 
